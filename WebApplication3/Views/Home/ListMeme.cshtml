@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebApplication3.Models.Meme>
+@{
+    ViewBag.Title = "ListMeme";
+}
+
+<h2>ListMeme</h2>
+
+<ul>
+    @foreach(WebApplication3.Models.Meme meme in Model)
+    {
+        <li>@meme.Title <a href="/home/contact/@meme.ID" class="btn-sm btn-danger">View!</a> <a href="/home/delete/@meme.ID" class="btn-sm btn-info">Delete!</a></li>
+    }
+</ul>

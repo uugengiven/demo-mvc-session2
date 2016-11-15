@@ -51,6 +51,19 @@ namespace WebApplication3.Controllers
             return View();
         }
 
+        public ActionResult ListMeme()
+        {
+            return View(db.Memes.ToList());
+        }
+
+        public ActionResult Delete(int ID)
+        {
+            Meme myMeme = db.Memes.Find(ID);
+            db.Memes.Remove(myMeme);
+            db.SaveChanges();
+            return RedirectToAction("ListMeme");
+        }
+
         [HttpPost]
         public ActionResult SaveOffOfNew(string Title, string Image, string Text, string Genre, string SFW)
         {
