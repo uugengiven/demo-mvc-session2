@@ -1,0 +1,18 @@
+﻿@model WebApplication3.Models.Meme
+
+@{
+    ViewBag.Title = Model.Genre;
+}
+
+<h1>@Model.Title</h1>
+@if (Model.SFW)
+{ 
+  <img src="@Model.Image" />
+}
+else
+{
+    <h2>No safe for work!</h2>
+}
+<h3>@Model.Text</h3>
+
+<p>Is Safe for Work? @Model.SFW</p>
